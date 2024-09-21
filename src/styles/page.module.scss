@@ -1,0 +1,58 @@
+
+.page {
+  background-color: #fff;
+  height: 100vh;
+  
+}
+
+.main {
+  width: 100%;
+  max-width: 140rem;
+  margin: auto;
+  font-size: 1.6rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+  font-size: 1rem;
+  color: black;
+  span  {
+    font-size: 2.4rem;
+  }
+  span.date {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+.tasksContainer{
+  width: 45rem;
+  margin: auto;
+  margin-top: 5rem;
+  
+}
+.tasksContainer > div {
+  color: black;
+  list-style: none;
+  border: 1px solid #EAECF0;
+  border-radius: 1.6rem;
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  
+  span{
+    color: rgba(0, 0, 0, 0.54);
+    text-align: center;
+  }
+  
+}
+
+
+
+

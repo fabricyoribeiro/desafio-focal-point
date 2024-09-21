@@ -1,0 +1,64 @@
+
+
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(112, 112, 112, 0.8);
+  opacity: 0.3;
+}
+.dialogContent {
+  background-color: white;
+  border-radius: 1.6rem;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45rem;
+  max-width: 45rem;
+  // max-height: 25rem;
+  padding: 3.2rem;
+}
+
+.dialogContent > div {
+  background-color: #fff;
+  border-radius: 5rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  .dialogTitle{
+    font-size: 2.4rem;
+  }
+
+  label{
+    font-size: 1.6rem;
+    display: block;
+    color: rgba(0, 0, 0, 0.54);
+  }
+}
+
+
+.dialogButtons{
+  display: flex;
+  gap: 1.6rem;
+  
+  button {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.6rem;
+    border-radius: 0.8rem;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #D30707, #F05353);
+
+  }
+
+  .dialogCancelButton {
+    @extend button;
+    background-image: none;
+    background-color: #E7EEFB;
+    color: #000;
+  }
+}

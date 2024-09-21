@@ -1,0 +1,46 @@
+
+.check {
+  background-color: #fff;
+  border: 1px solid #B0BBD1;
+  border-radius: .3rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checked {
+  @extend .check;
+  border-color: #0796D3;
+  background-color: #A0DCF6;
+}
+
+.task{
+  padding: 1.6rem;
+  border: 1px dashed #D7DDE9;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  
+}
+
+.task > div {
+  display: inherit;
+  align-items: inherit;
+  gap: 1rem;
+
+  span{
+    color: #000;
+  }
+  del{
+    color: #00000070;
+  }
+}
+.task:hover {
+  cursor: pointer;
+  background-color: #F7F9FD;
+}
