@@ -38,7 +38,7 @@ $color-cancel-bg: #E7EEFB;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    padding: 2rem;
+    padding: 0;
   }
 }
 
@@ -57,6 +57,11 @@ $color-cancel-bg: #E7EEFB;
   label {
     font-size: 1.6rem;
     display: block;
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 2rem;
+
   }
 }
 
