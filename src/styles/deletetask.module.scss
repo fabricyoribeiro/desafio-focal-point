@@ -28,11 +28,16 @@ $color-cancel-bg: #E7EEFB;
 
   @media screen and (max-width: $tablet) {
     position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
     width: 100vw;
     height: 100vh;
+    max-width: none;
     padding: 0;
   }
 }
+
 
 .dialogContent > div {
   background-color: $color-white;
@@ -51,7 +56,7 @@ $color-cancel-bg: #E7EEFB;
     display: block;
     color: $color-label-muted;
   }
-  
+
   @media screen and (max-width: $tablet) {
     padding: 2rem;
 
