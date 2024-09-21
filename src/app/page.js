@@ -9,6 +9,8 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { useEffect, useState } from "react";
 import NewTask from "../components/NewTask";
 import useTask from "../hooks/useTask";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -39,7 +41,7 @@ export default function Home() {
         <header className={page.header}>
           <Logo />
           <span>Bem-vindo de volta, Marcus</span>
-          <span className={page.date}>Segunda, 01 de dezembro de 2025</span>
+          <span className={page.date}>{format(new Date(), 'eee, dd MMMM yyyy', {locale: ptBR})}</span>
         </header>
         <hr />
 

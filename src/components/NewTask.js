@@ -21,7 +21,7 @@ export default function NewTask({reloadTasks}) {
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <button className={newTask.newTaskButton}>
-          Adicionar nova taref a
+          Adicionar nova tarefa
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
