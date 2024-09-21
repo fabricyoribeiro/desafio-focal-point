@@ -12,17 +12,12 @@ export default function Task({ title, id, checked, reloadTasks }) {
 
   const {toggleTaskChecked} = useTask()
 
-  console.log(id)
-  
   function check(id){
     toggleTaskChecked(id)
-    console.log('ooo')
     reloadTasks()
     setIsChecked(true)
   }
 
-
-  
   return (
     <div className={task.task}>
       <div onClick={()=> {check(id)}}>

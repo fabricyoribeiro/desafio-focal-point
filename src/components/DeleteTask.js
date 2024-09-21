@@ -24,8 +24,6 @@ export default function DeleteTask({ id, reloadTasks }) {
         <Dialog.Content
           className={deleteTask.dialogContent}
         >
-          <Dialog.Description> descrição do diálogo.</Dialog.Description>
-
 
           <div>
             <Dialog.Title className={deleteTask.dialogTitle}>

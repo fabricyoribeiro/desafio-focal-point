@@ -1,35 +1,43 @@
 $tablet: 768px;
 
+$color-white: #fff;
+$color-border: #B0BBD1;
+$color-checked-border: #0796D3;
+$color-checked-bg: #A0DCF6;
+$color-dashed-border: #D7DDE9;
+$color-text: #000;
+$color-muted-text: #00000070;
+$color-hover-bg: #F7F9FD;
+
 .check {
-  background-color: #fff;
-  border: 1px solid #B0BBD1;
+  background-color: $color-white;
+  border: 1px solid $color-border;
   border-radius: .3rem;
   width: 2.4rem;
   height: 2.4rem;
   
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checked {
   @extend .check;
-  border-color: #0796D3;
-  background-color: #A0DCF6;
+  border-color: $color-checked-border;
+  background-color: $color-checked-bg;
 }
 
-.task{
+.task {
   padding: 1.6rem;
-  border: 1px dashed #D7DDE9;
+  border: 1px dashed $color-dashed-border;
   border-radius: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  @media screen and (max-width: $tablet){
+  @media screen and (max-width: $tablet) {
     padding-inline: 0.8rem;
   }
-  
 }
 
 .task > div {
@@ -38,14 +46,16 @@ $tablet: 768px;
   gap: 1rem;
   width: 100%;
 
-  span{
-    color: #000;
+  span {
+    color: $color-text;
   }
-  del{
-    color: #00000070;
+
+  del {
+    color: $color-muted-text;
   }
 }
+
 .task:hover {
   cursor: pointer;
-  background-color: #F7F9FD;
+  background-color: $color-hover-bg;
 }

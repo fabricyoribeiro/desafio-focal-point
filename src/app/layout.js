@@ -15,11 +15,15 @@ const geistMono = localFont({
 export const metadata = {
   title: "FocalPoint",
   description: "Desenvolvido por Fabricyo Ribeiro",
+  
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>

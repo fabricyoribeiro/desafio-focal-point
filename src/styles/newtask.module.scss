@@ -1,66 +1,78 @@
+$tablet: 768px;
+
+$color-gradient-start: #0796D3;
+$color-gradient-end: #53C0F0;
+$color-white: #fff;
+$color-black: #000;
+$color-border: #D7DDE9;
+$color-shadow: #00000038;
+$color-cancel-bg: #E7EEFB;
 
 .newTaskButton {
   width: 100%;
   margin-top: 2.4rem;
   padding: 1.6rem;  
   border-radius: 0.8rem;
-  background-image: linear-gradient(to right, #0796D3, #53C0F0);
+  background-image: linear-gradient(to right, $color-gradient-start, $color-gradient-end);
 }
 
 .dialogOverlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(112, 112, 112, 0.8);
-  opacity: 0.3;
+  backdrop-filter: blur(2px); 
 }
+
 .dialogContent {
-  background-color: white;
+  background-color: $color-white;
   border-radius: 1.6rem;
-  box-shadow: rgba(255, 255, 255, 0.35) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  box-shadow: 0px 16px 28px 0px $color-shadow;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 45rem;
   max-width: 45rem;
-  // max-height: 25rem;
   padding: 3.2rem;
+
+  @media screen and (max-width: $tablet) {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+  }
 }
 
 .dialogContent > div {
-  background-color: #fff;
+  background-color: $color-white;
   border-radius: 5rem;
-  color: black;
+  color: $color-black;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
 
-  .dialogTitle{
+  .dialogTitle {
     font-size: 2.4rem;
   }
 
-  label{
+  label {
     font-size: 1.6rem;
     display: block;
   }
 }
 
-input.inputTask{
-  // all: unset;
-  
-  color: #000;
-  background-color: #fff;
-  
+input.inputTask {
+  color: $color-black;
+  background-color: $color-white;
   padding: 1.6rem;
   width: 100%;
-  border: 1px solid #D7DDE9;
+  border: 1px solid $color-border;
   border-radius: 0.8rem;
   font-size: 1.6rem;
   margin-top: 1rem;
   outline-style: none;
 }
 
-.dialogButtons{
+.dialogButtons {
   display: flex;
   gap: 1.6rem;
   
@@ -71,14 +83,17 @@ input.inputTask{
     border-radius: 0.8rem;
     border: none;
     cursor: pointer;
-    background-image: linear-gradient(to right, #0796D3, #53C0F0);
-
+    background-image: linear-gradient(to right, $color-gradient-start, $color-gradient-end);
   }
 
   .dialogCancelButton {
     @extend button;
     background-image: none;
-    background-color: #E7EEFB;
-    color: #000;
+    background-color: $color-cancel-bg;
+    color: $color-black;
+  }
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column-reverse;
   }
 }

@@ -20,18 +20,14 @@ export default function Home() {
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
-
-    function getTasks(){
+    function getTasks() {
       const tasks = getAllTasks();
       setTasks(tasks);
-      console.log(tasks);
-
     }
-    getTasks()
+    getTasks();
   }, [reload]);
 
   function reloadTasks() {
-    // window.location.reload()
     setReload(!reload);
   }
 
@@ -41,30 +37,48 @@ export default function Home() {
         <header className={page.header}>
           <Logo />
           <span>Bem-vindo de volta, Marcus</span>
-          <span className={page.date}>{format(new Date(), 'eee, dd MMMM yyyy', {locale: ptBR})}</span>
+          <span className={page.date}>
+            {format(new Date(), 'eee, dd MMMM yyyy', { locale: ptBR })
+              .charAt(0)
+              .toUpperCase() + 
+              format(new Date(), 'eee, dd MMMM yyyy', { locale: ptBR }).slice(1)}
+          </span>
+
         </header>
-        <hr />
 
         <div className={page.tasksContainer}>
           <div>
             <span>Suas tarefas hoje</span>
 
             {Array.isArray(tasks) &&
-              tasks.map(({ id, title, checked }) =>
-                !checked && (
-                  <Task key={id} id={id} title={title} checked={checked} reloadTasks={reloadTasks} />
-                ) 
+              tasks.map(
+                ({ id, title, checked }) =>
+                  !checked && (
+                    <Task
+                      key={id}
+                      id={id}
+                      title={title}
+                      checked={checked}
+                      reloadTasks={reloadTasks}
+                    />
+                  )
               )}
 
             <span>tarefas finalizadas</span>
 
             {Array.isArray(tasks) &&
-              tasks.map(({ id, title, checked }) =>
-                checked && (
-                  <Task key={id} id={id} title={title} checked={checked} reloadTasks={reloadTasks}/>
-                ) 
+              tasks.map(
+                ({ id, title, checked }) =>
+                  checked && (
+                    <Task
+                      key={id}
+                      id={id}
+                      title={title}
+                      checked={checked}
+                      reloadTasks={reloadTasks}
+                    />
+                  )
               )}
-
           </div>
 
           <NewTask reloadTasks={reloadTasks} />

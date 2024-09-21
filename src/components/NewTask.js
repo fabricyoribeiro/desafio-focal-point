@@ -10,10 +10,8 @@ export default function NewTask({reloadTasks}) {
   const { createTask } = useTask();
 
   const handleAddTask = () => {
-    // Aqui você pode adicionar a lógica para criar a tarefa
     createTask(taskTitle);
     reloadTasks();
-    console.log(taskTitle);
     setTaskTitle("");
   };
 
@@ -27,7 +25,6 @@ export default function NewTask({reloadTasks}) {
       <Dialog.Portal>
         <Dialog.Overlay className={newTask.dialogOverlay} />
         <Dialog.Content className={newTask.dialogContent}>
-          <Dialog.Description> descrição do diálogo.</Dialog.Description>
 
           <div>
             <Dialog.Title className={newTask.dialogTitle}>
