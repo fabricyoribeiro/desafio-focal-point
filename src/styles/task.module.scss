@@ -13,9 +13,8 @@ $color-hover-bg: #F7F9FD;
   background-color: $color-white;
   border: 1px solid $color-border;
   border-radius: .3rem;
-  width: 2.4rem;
+  min-width: 2.4rem;
   height: 2.4rem;
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,12 +43,16 @@ $color-hover-bg: #F7F9FD;
   display: inherit;
   align-items: inherit;
   gap: 1rem;
-  width: 100%;
+  width: 90%;
 
-  span {
+  
+  span, del {
     color: $color-text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
+  
   del {
     color: $color-muted-text;
   }
